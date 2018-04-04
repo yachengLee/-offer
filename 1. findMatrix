@@ -87,8 +87,6 @@ int find_kth_in_YoungTableau(int** a, int m, int n, int k)
     }   
     return ret; 
 }   
-    
-//整数k在矩阵中的排名 
 int get_order(int** a, int m, int n, int k) 
 {   
     int row, col, order;   
