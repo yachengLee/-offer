@@ -29,11 +29,6 @@ public:
 查找第k小的值：最大最小堆
 class Solution {  
 public:  
-    /** 
-     * @param matrix: a matrix of integers 
-     * @param k: an integer 
-     * @return: the kth smallest number in the matrix 
-     */  
     int kthSmallest(vector<vector<int> > &matrix, int k) {  
         // write your code here  
         int n = matrix.size();  
