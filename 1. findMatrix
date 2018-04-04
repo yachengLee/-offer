@@ -1,3 +1,18 @@
+测试用例
+int main()
+{
+	vector<vector<int> > nums(4,vector<int>(4)); 
+	int b[4][4] = {{0,1,2,2}, {1,3,8,8}, {1,5,9,11}, {4,6,12,15}};  
+	for(int i = 0; i < 4; i++){  
+		for(int j = 0; j < 4; j++){  
+			nums[i][j] = b[i][j];  
+		}  
+	}  
+	int num=kthSmall(nums,16);
+	cout << num;
+	system("pause");
+	return 0;
+}
 查找指定值：
 class Solution {
 public:
@@ -29,7 +44,7 @@ public:
 查找第k小的值：最大最小堆
 class Solution {  
 public:  
-    int kthSmallest(vector<vector<int> > &matrix, int k) {  
+    int kthSmall(vector<vector<int> > &matrix, int k) {  
         // write your code here  
         int n = matrix.size();  
         int m = matrix[0].size();  
@@ -56,48 +71,4 @@ public:
         }  
     }  
 };  
-二分法+堆
-int find_kth_in_YoungTableau(int** a, int m, int n, int k) 
-{   
-    int low = a[0][0];   
-    int high = a[m-1][n-1];   
-    int order = 0;   
-    int mid = 0;   
-    do {     
-        mid = (low + high) >> 1;     
-        order = get_order(a, m, n, mid);     
-        if(order == k)       
-            break;     
-        else if(order > k)       
-            high = mid - 1;     
-        else       
-            low = mid + 1;   
-    } while(1); //二分枚举整，找出正好大于k的一个整数 mid      
-    int row = 0;   
-    int col = n - 1;   
-    int ret = mid;   
-    while(row <= m-1 && col >= 0) 
-    { //找出比mid小的最大数     
-        if(a[row][col] < mid) {       
-             ret = (a[row][col] > ret) ? a[row][col] : ret;      
-             row++;     
-        } else {       
-            col--;     
-        }   
-    }   
-    return ret; 
-}   
-int get_order(int** a, int m, int n, int k) 
-{   
-    int row, col, order;   
-    row = 0;   col = n-1;   order = 0;   
-    while(row <= m-1 && col >= 0) {     
-        if(a[row][col] < k) {       
-            order += col + 1;       
-            row++;     
-        }else {       
-            col--;     
-        }   
-    }   
-    return order; 
-}
+
